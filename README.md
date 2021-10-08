@@ -14,7 +14,7 @@ https://www.chaijs.com/
 ## how to run: 
 
 ## clone this repo to a local directory
-git clone https://github.com/<your-username>/automation-testing.git
+git clone https://github.com/username/automation-testing.git
 
 ## cd into the cloned repo
 $ cd code
