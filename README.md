@@ -9,6 +9,8 @@ https://cucumber.io/
 Chaijs:
 https://www.chaijs.com/
 
+# you need to install in your pc:
+$ npm install -D cypress
 
 # how to run: 
 $ npm run cypress:open
