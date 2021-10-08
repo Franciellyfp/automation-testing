@@ -11,6 +11,7 @@ https://cucumber.io/
 Chaijs:
 https://www.chaijs.com/
 
+
 ## how to run: 
 
 ## clone this repo to a local directory
@@ -18,6 +19,9 @@ git clone https://github.com/username/automation-testing.git
 
 ## cd into the cloned repo
 $ cd code
+
+## install dependencies
+$ npm install
 
 ## start the tests
 $ npm run cypress:open

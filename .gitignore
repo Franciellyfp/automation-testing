@@ -1,0 +1,7 @@
+cypress.env.json
+cypress.json
+cypress/fixtures/
+cypress/videos
+node_modules
+.vscode
+.DS_Store
