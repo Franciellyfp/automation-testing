@@ -19,8 +19,5 @@ git clone https://github.com/<your-username>/automation-testing.git
 ## cd into the cloned repo
 $ cd code
 
-## install the node_modules
-$ npm install
-
 ## start the tests
 $ npm run cypress:open
