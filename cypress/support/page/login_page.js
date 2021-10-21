@@ -23,6 +23,15 @@ class LoginPage {
         cy.get(loginElements.login_button())
           .click()
     }
-  
+
+    fill_invalid_email(){
+        cy.get(loginElements.email_field())
+          .type(Cypress.env('invalid_email'))
+    }
+
+    check_message(){
+        cy.get(loginElements.invalid_email_message()).should('contain', 'Set a valid e-mail.')
+    }
+    
 }
 export default LoginPage;

@@ -18,6 +18,18 @@ When("Click on the log in button", () => {
     loginPage.click_login_button()
 })
 
+When("I type the invalid e-mail address", () => {
+    loginPage.fill_invalid_email()
+})
+
+When("I fill the password field", () => {
+    loginPage.fill_password()
+})
+
 Then("Should see the home page", () => {
     homePage.check_white_label()
+})
+
+Then("Should see an error message", () => {
+    loginPage.check_message()
 })
