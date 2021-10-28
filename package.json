@@ -4,15 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:firefox": "cypress run --browser firefox",
+    "cypress:run:electron": "cypress run --browser electron"
   },
   "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/support/steps"
+    "cypress-cucumber-preprocessor": true,
+    "step_definitions": "cypress/support/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cucumber-html-reporter": "^5.5.0",
     "cypress": "^8.5.0",
     "cypress-cucumber-preprocessor": "^4.3.0",
     "eslint-plugin-cypress": "^2.12.1"
