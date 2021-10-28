@@ -25,4 +25,5 @@ $ npm install
 
 ## start the tests
 $ npm run cypress:open
+
 $ npm run node cypress/support/cucumber-html-report.js
