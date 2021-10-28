@@ -3,6 +3,8 @@ cypress.json
 cypress/fixtures/
 cypress/videos/
 cypress/screenshots/
+cypress/reports/
+cypress/cucumber-json/
 node_modules
 .vscode
 .DS_Store
