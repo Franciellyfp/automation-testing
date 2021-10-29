@@ -6,6 +6,7 @@ Feature: Login Page
         And Click on the log in button
         Then Should see the home page
 
+    @invalid_email
     Scenario: Invalid e-mail
         Given Access the login page
         When I type the invalid e-mail address

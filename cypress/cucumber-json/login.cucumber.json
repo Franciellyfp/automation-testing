@@ -22,7 +22,7 @@
             "name": "Access the login page",
             "result": {
               "status": "passed",
-              "duration": 3673000000
+              "duration": 5003000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I fill the fields",
             "result": {
               "status": "passed",
-              "duration": 874000000
+              "duration": 1010000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "Click on the log in button",
             "result": {
               "status": "passed",
-              "duration": 122000000
+              "duration": 185000000
             }
           },
           {
@@ -52,7 +52,7 @@
             "name": "Should see the home page",
             "result": {
               "status": "passed",
-              "duration": 35000000
+              "duration": 56000000
             }
           }
         ]
@@ -60,59 +60,62 @@
       {
         "id": "login-page;invalid-e-mail",
         "keyword": "Scenario",
-        "line": 9,
+        "line": 10,
         "name": "Invalid e-mail",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@invalid_email",
+            "line": 9
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 10,
+            "line": 11,
             "name": "Access the login page",
             "result": {
               "status": "passed",
-              "duration": 489000000
+              "duration": 688000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 11,
+            "line": 12,
             "name": "I type the invalid e-mail address",
             "result": {
-              "status": "passed",
-              "duration": 274000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 12,
-            "name": "I fill the password field",
-            "result": {
-              "status": "passed",
-              "duration": 321000000
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#email`, but never found it.\n    at LoginPage.fill_invalid_email (https://edgeconnex.ckl.tools/__cypress/tests?p=cypress/integration/login.feature:177:10)\n    at Context.eval (https://edgeconnex.ckl.tools/__cypress/tests?p=cypress/integration/login.feature:215:13)\n    at Context.resolveAndRunStepDefinition (https://edgeconnex.ckl.tools/__cypress/tests?p=cypress/integration/login.feature:10712:29)\n    at Context.eval (https://edgeconnex.ckl.tools/__cypress/tests?p=cypress/integration/login.feature:10033:35)"
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
+            "name": "I fill the password field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
             "name": "Click on the log in button",
             "result": {
-              "status": "passed",
-              "duration": 120000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 14,
+            "line": 15,
             "name": "Should see an error message",
             "result": {
-              "status": "passed",
-              "duration": 35000000
+              "status": "skipped"
             }
           }
         ]

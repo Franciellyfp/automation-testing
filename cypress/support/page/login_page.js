@@ -32,6 +32,7 @@ class LoginPage {
     check_message(){
         cy.get(loginElements.invalid_email_message()).should('contain', 'Set a valid e-mail.')
     }
+
     
 }
 export default LoginPage;
