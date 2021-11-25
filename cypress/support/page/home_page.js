@@ -16,6 +16,14 @@ class HomePage {
         cy.get(logoffElements.logoff_button())
           .click()
     }
+
+    click_email_dropdown(){
+      cy.get(homeElements.email_dropdown()).click()
+    }
+
+    click_link_reset_password(){
+      cy.get(homeElements.link_reset_your_password()).click()
+    }
 }
 
 export default HomePage;

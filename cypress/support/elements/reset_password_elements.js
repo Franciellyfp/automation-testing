@@ -1,6 +1,21 @@
-class ResetPassword {
-    email_dropdown = () => { 
-        return '.styles_userMenu__36vqK > :nth-child(1)' 
+class ResetPasswordElements {
+
+    current_password_field = () => {
+        return '#currentPassword'
     }
 
+    new_password_field = () => {
+        return '#newPassword'
+    }
+
+    new_confirm_password_field = () => {
+        return '#newPasswordConfirm'
+    }
+
+    change_password = () => {
+        return ':nth-child(4) > .styles_button__1hbjW'
+    }
+   
 }
+
+export default ResetPasswordElements;
