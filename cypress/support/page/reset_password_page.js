@@ -29,6 +29,34 @@ class ResetPasswordPage {
         cy.get(resetPasswordElements.change_password())
           .click()
     }
+
+    check_reset_password(failure){
+      switch (failure) {
+        case "Empty current password":
+            this.fill_new_password("Teste@123456")
+            this.fill_confirm_password("Teste@123456")
+            this.click_button_change_password()
+            break;
+        case "Different confirmation":
+            this.fill_current_password(Cypress.env(password))
+            this.fill_new_password("Teste@654321")
+            this.fill_confirm_password("Teste@123456")
+            this.click_button_change_password()
+            break;
+        case "Empty confirmation":
+            this.fill_current_password("Teste@123456")
+            this.fill_new_password("Teste@123456")
+            this.click_button_change_password()
+            break;
+        case "Empty new password":
+            this.fill_current_password("Teste@123456")
+            this.fill_confirm_password("Teste@654321")
+            this.click_button_change_password()
+            break;
+        default:
+            break;
+    }
+  }
 }
 
 export default ResetPasswordPage;

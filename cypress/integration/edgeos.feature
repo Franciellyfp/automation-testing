@@ -22,13 +22,14 @@ Feature: EdgeOS
     Scenario Outline: Reset password failure: "<failure>"
         Given User clicks on reset password button
         When User inputs "<failure>"
-        Then Should display the message "<errorMessage>"
+        Then the message for <"failure"> should be "<errorMessage>"
 
     Examples:
         | failure                | errorMessage                                             |
         | Empty current password | The current password field is required.                  |
         | Different confirmation | The new password and confirmation password do not match. |
         | Empty confirmation     | The password confirmation field is required.             |
+        | Empty new password     | The new password field is required.                      |
 
     
 
