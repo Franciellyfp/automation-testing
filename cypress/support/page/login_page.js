@@ -27,5 +27,10 @@ class LoginPage {
           .click()
     }
 
+    check_login_page(){
+      cy.wait(6000)
+      cy.url().should('include', '/login')
+    }
+
 }
 export default LoginPage;

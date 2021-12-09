@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+require('cypress-xpath')
 
 import HomeElements from '../elements/home_elements'
 import LogoffElements from '../elements/logoff_elements'
@@ -22,7 +23,7 @@ class HomePage {
     }
 
     click_link_reset_password(){
-      cy.get(homeElements.link_reset_your_password()).click()
+      cy.xpath(homeElements.link_reset_your_password()).click({force: true})
     }
 }
 

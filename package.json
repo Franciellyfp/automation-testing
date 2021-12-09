@@ -26,6 +26,7 @@
     "cucumber-html-reporter": "^5.5.0",
     "cypress": "^8.5.0",
     "cypress-cucumber-preprocessor": "^4.3.0",
+    "cypress-xpath": "^1.6.2",
     "eslint-plugin-cypress": "^2.12.1"
   }
 }

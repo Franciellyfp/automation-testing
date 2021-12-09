@@ -9,7 +9,6 @@ Feature: EdgeOS
         When User inputs the information
         Then Should see the home page
 
-  
      Scenario: Logoff successfully
         Given User clicks on the logout button
         Then Should see the login page
