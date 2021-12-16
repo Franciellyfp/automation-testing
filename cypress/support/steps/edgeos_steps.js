@@ -29,9 +29,13 @@ When("User clicks on reset password button", () => {
     home_page.click_link_reset_password()
 })
 
-When("When User inputs {string}", (failure) => {
-    reset_password_page.check_reset_password(string)
+When("User inputs the information about the new password", () => {
+    reset_password_page.change_password(Cypress.env('password'), Cypress.env('password'), Cypress.env('password'))
 })
+
+When("When User inputs {string}", (failure) => {
+    reset_password_page.check_reset_password(failure)        
+})   
 
 Then("Should see the login page", () => {
     login_page.check_login_page()
@@ -41,6 +45,6 @@ Then("Should see the home page", () => {
     home_page.check_white_label()
 })
 
-Then("Then Should display the message {string}", () => {
-    cy.get('.styles_helperText__3Llrc').should('contain', {string});
+Then("Then Should display the message {string}", (errorMessage) => {
+    reset_password_page.check_error_messages(errorMessage)
 })

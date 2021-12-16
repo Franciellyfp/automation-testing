@@ -1,6 +1,6 @@
 class LogoffElements{
     logoff_button = () => {
-        return '.styles_button__1hbjW'
+        return '[type="button"]'
     }
 }
 

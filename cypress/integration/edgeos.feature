@@ -8,20 +8,29 @@ Feature: EdgeOS
         Given Access the login page
         When User inputs the information
         Then Should see the home page
-
+    
+    @Logoff
+    @Regression
+    @Smoke
      Scenario: Logoff successfully
         Given User clicks on the logout button
         Then Should see the login page
 
+    @ResetPassword
+    @Regression
+    @Smoke
     Scenario: Reset password successfully
         Given User clicks on reset password button
-        When User inputs the information
+        When User inputs the information about the new password
         Then Should see the home page
-
-    Scenario Outline: Reset password failure: "<failure>"
+    
+    @ResetPasswordError
+    @Regression
+    @Smoke
+    Scenario Outline: Reset password failure
         Given User clicks on reset password button
-        When User inputs "<failure>"
-        Then the message for <"failure"> should be "<errorMessage>"
+        When User inputs <failure>
+        Then the message for <failure> should be <errorMessage>
 
     Examples:
         | failure                | errorMessage                                             |
