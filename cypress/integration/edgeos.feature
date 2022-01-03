@@ -27,10 +27,10 @@ Feature: EdgeOS
     @ResetPasswordError
     @Regression
     @Smoke
-    Scenario Outline: Reset password failure
+    Scenario Outline: Reset password failure "<failure>"
         Given User clicks on reset password button
-        When User inputs <failure>
-        Then the message for <failure> should be <errorMessage>
+        When User inputs "<failure>"
+        Then The message should be "<errorMessage>"
 
     Examples:
         | failure                | errorMessage                                             |

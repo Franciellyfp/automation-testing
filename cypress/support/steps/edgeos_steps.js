@@ -33,8 +33,8 @@ When("User inputs the information about the new password", () => {
     reset_password_page.change_password(Cypress.env('password'), Cypress.env('password'), Cypress.env('password'))
 })
 
-When("When User inputs {string}", (failure) => {
-    reset_password_page.check_reset_password(failure)        
+When("User inputs {string}", (failure) => {
+    reset_password_page.check_reset_password(failure)    
 })   
 
 Then("Should see the login page", () => {
@@ -45,6 +45,6 @@ Then("Should see the home page", () => {
     home_page.check_white_label()
 })
 
-Then("Then Should display the message {string}", (errorMessage) => {
+Then("The message should be {string}", (errorMessage) => {
     reset_password_page.check_error_messages(errorMessage)
 })

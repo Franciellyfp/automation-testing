@@ -41,52 +41,79 @@ class ResetPasswordPage {
     }
 
     check_reset_password(failure){
-      console.log(failure)
-      switch (failure) {
-        case "Empty current password":
-            this.fill_new_password("Teste@123456")
-            this.fill_confirm_password("Teste@123456")
-            this.click_button_change_password()
-            break;
-        case "Different confirmation":
-            this.fill_current_password(Cypress.env(password))
-            this.fill_new_password("Teste@654321")
-            this.fill_confirm_password("Teste@123456")
-            this.click_button_change_password()
-            break;
-        case "Empty confirmation":
-            this.fill_current_password("Teste@123456")
-            this.fill_new_password("Teste@123456")
-            this.click_button_change_password()
-            break;
-        case "Empty new password":
-            this.fill_current_password("Teste@123456")
-            this.fill_confirm_password("Teste@654321")
-            this.click_button_change_password()
-            break;
-        default:
-            break;
-    }
+      if (failure == "Empty current password"){
+        this.check_current_password()
+      }
+      if (failure == "Different confirmation"){
+        this.check_different_password()
+      }
+      if (failure == "Empty confirmation"){
+        this.check_empty_new_password()
+      }
+      if (failure == "Empty new password"){
+        this.check_empty_new_password()
+      }
+  }
+  
+    check_current_password(){
+      this.fill_new_password('Teste@123456')
+      this.fill_confirm_password('Teste@123456')
+      this.click_button_change_password()
   }
 
-  check_error_messages(errorMessage){
-    switch (errorMessage) {
-      case errorMessage = "Empty current password":
-          should('contain', 'The current password field is required.')
-          break;
-      case errorMessage = "Different confirmation":
-          should('contain', 'The new password and confirmation password do not match.')
-          break;
-      case errorMessage = "Empty confirmation":
-        should('contain', 'The confirm password field is required.')
-          break;
-      case errorMessage = "Empty new password":
-        should('contain', 'The new password field is required.')
-          break;
-      default:
-          break;
-    }
+    check_empty_password_confirmation(){
+      this.fill_current_password(Cypress.env('password'))
+      this.fill_new_password('Teste@123456')
+      this.click_button_change_password()
   }
+
+    check_empty_new_password(){
+      this.fill_current_password(Cypress.env('password'))
+      this.fill_confirm_password('Teste@123456')
+      this.click_button_change_password()
+  }
+
+    check_different_password(){
+      this.fill_current_password(Cypress.env('password'))
+      this.fill_new_password('Teste@123456')
+      this.fill_confirm_password('Teste123456')
+      this.click_button_change_password()
+    }
+
+    check_error_current_password(){
+      cy.get(resetPasswordElements.error_current_password_empty())
+        .should('contain', 'The current password field is required.')
+    }
+
+    check_error_new_and_confirm_password_wrong(){
+      cy.get(resetPasswordElements.error_confirmation_password_empty())
+        .should('contain', 'The new password and confirmation password do not match.')
+    }
+
+    check_error_password_confirmation(){
+      cy.get(resetPasswordElements.error_confirmation_password_empty())
+        .should('contain', 'The password confirmation field is required.')
+    }
+
+    check_error_new_password(){
+      cy.get(resetPasswordElements.error_new_password_empty())
+        .should('contain', 'The new password field is required.')
+    }
+
+    check_error_messages(error_message){
+      if (error_message == "The current password field is required."){
+        this.check_error_current_password()
+      }
+      if (error_message == "The new password and confirmation password do not match."){
+        this.check_error_new_and_confirm_password_wrong()
+      }
+      if (error_message == "The password confirmation field is required."){
+        this.check_error_password_confirmation()
+      }
+      if (error_message == "The new password field is required."){
+        this.check_error_new_password()
+      }
+    }   
 }
 
 export default ResetPasswordPage;
