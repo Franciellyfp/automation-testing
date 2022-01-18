@@ -7,7 +7,6 @@ const login_page = new LoginPage
 const home_page = new HomePage
 const reset_password_page = new ResetPasswordPage
 
-//login
 Given("Access the login page", () => {
     login_page.open_login_page()
 })

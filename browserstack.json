@@ -1,0 +1,41 @@
+{
+    "auth": {
+        "username": "franciellypedros_Mja1J8",
+        "access_key": "QusLnKeHmDyrq5xMhnrT"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_proj_dir": "./",
+        "pluginsFile": "cypress/plugins/index.js",
+        "project_name": "EdgeOS",
+        "build_name": "v1",
+        "parallels": 1,
+        "npm_dependencies": {
+            "cucumber-html-reporter": "^5.5.0",
+            "cypress": "^8.5.0",
+            "cypress-cucumber-preprocessor": "^4.3.0",
+            "cypress-xpath": "^1.6.2",
+            "eslint-plugin-cypress": "^2.12.1"  
+        },
+        "package_config_options": {
+            "cypress-cucumber-preprocessor": {
+                "nonGlobalStepDefinitions": true,
+                "step_definitions": "cypress/support/steps"
+            }
+        }
+    },
+    "connection_settings": {
+        "local": false,
+        "local_identifier": null
+    },
+    
+    "disable_usage_reporting": false
+}

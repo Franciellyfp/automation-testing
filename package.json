@@ -10,7 +10,7 @@
     "cypress:run:electron": "cypress run --browser electron"
   },
   "cypress-cucumber-preprocessor": {
-    "cypress-cucumber-preprocessor": true,
+  "cypress-cucumber-preprocessor": true,
     "step_definitions": "cypress/support/steps",
     "cucumberJson": {
       "generate": true,
@@ -27,6 +27,7 @@
     "cypress": "^8.5.0",
     "cypress-cucumber-preprocessor": "^4.3.0",
     "cypress-xpath": "^1.6.2",
-    "eslint-plugin-cypress": "^2.12.1"
+    "eslint-plugin-cypress": "^2.12.1",
+    "browserstack-cypress-cli": "^1.5.1" 
   }
 }
